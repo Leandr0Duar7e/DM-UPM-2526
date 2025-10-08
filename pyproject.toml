@@ -1,0 +1,7 @@
+[project]
+name = "Knowledge Discovery Project"
+version = "0.1.0"
+description = "A Knowledge Discovery project focused on applying data mining and machine learning methods to time series data."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
