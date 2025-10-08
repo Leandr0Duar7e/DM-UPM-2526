@@ -129,9 +129,11 @@
         % Author information
         {\large
         \textbf{Authors:}\\[0.3cm]
+        Emanuele Alberti\\
         Leandro Duarte\\
-        Ottavia Biagi\\
-        Emanuele Alberti
+        Ottavia Biagi\\[0.5cm]
+        \textbf{Professor:}\\[0.3cm]
+        Aurora Perez
         \par}
         
         \vfill
@@ -145,7 +147,55 @@
 \tableofcontents
 \newpage
 
+\section{Introduction}
 
+Anomaly detection in multivariate time series is a critical task across various domains, including aerospace systems monitoring, industrial equipment maintenance, and cybersecurity. This project explores the application of modern deep learning techniques for anomaly detection, specifically focusing on transformer-based approaches.
+
+Our work is inspired by two papers in this field: \textbf{OmniAnomaly}~\cite{Su2019RobustAD}, which uses stochastic recurrent neural networks with variational autoencoders, and \textbf{TranAD}~\cite{tuli2022tranaddeeptransformernetworks}, which leverages transformer networks with adversarial training. We aim to study these methodologies and apply transformer-based detection methods to well-established benchmark datasets in the anomaly detection domain.
+
+\sectionline
+
+\section{Domain Understanding}
+
+Our focus is on multivariate time series anomaly detection, with particular emphasis on aerospace and industrial system monitoring. We work with NASA spacecraft telemetry data from SMAP (Soil Moisture Active Passive satellite) and MSL (Mars Science Laboratory rover) missions, as well as the Server Machine Dataset (SMD) containing 5 weeks of infrastructure metrics from 28 machines at a large internet company.
+
+Anomaly detection in these systems presents challenges including multivariate dependencies where sensors interact and anomalies manifest across multiple dimensions, temporal patterns requiring both short and long-term dependency modeling, imbalanced data with rare anomaly events (4-13\% of observations), and the need for unsupervised learning as training data lacks anomaly labels.
+
+\sectionline
+
+\section{Data Understanding}
+
+We work with publicly available benchmark datasets commonly used in anomaly detection research. Table~\ref{tab:dataset_summary} summarizes the key characteristics of our target datasets.
+
+\begin{table}[H]
+\centering
+\caption{Dataset Summary Statistics}
+\label{tab:dataset_summary}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Dataset} & \textbf{Entities} & \textbf{Dimensions} & \textbf{Train Size} & \textbf{Anomaly \%} \\
+\midrule
+SMAP & 55 & 25 & 135,183 & 13.13\% \\
+MSL & 27 & 55 & 58,317 & 10.72\% \\
+SMD & 28 & 38 & 708,405 & 4.16\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The SMAP and MSL datasets contain time-series telemetry from NASA spacecraft operations with expert-labeled anomalies indicating system faults. The SMD dataset provides server resource utilization metrics (CPU, memory, disk I/O, network) from 28 machines across 3 groups. These datasets require normalization to the $[0,1]$ range for stable model training, and a sliding window approach (typically size 10-50) is used to capture temporal context. Anomalies range from subtle deviations close to normal patterns to obvious significant outliers.
+
+\sectionline
+
+\section{Project Goals}
+
+Our main goal is to study and apply transformer-based anomaly detection techniques to multivariate time series data while following best practices in the Knowledge Discovery process. We aim to understand state-of-the-art approaches including transformer architectures with attention mechanisms, reconstruction-based anomaly scoring, and unsupervised learning methodologies as presented in recent works by Su et al.~\cite{Su2019RobustAD} and Tuli et al.~\cite{tuli2022tranaddeeptransformernetworks}.
+
+From a data mining perspective, this project focuses on two key tasks: anomaly detection as binary classification at the timestamp level, and anomaly diagnosis as multi-label classification to identify which specific dimensions exhibit anomalous behavior. These tasks provide excellent learning opportunities for understanding both time series analysis and multi-class classification problems in an unsupervised context.
+
+Our approach emphasizes learning and incremental development rather than immediate complexity. We plan to start with a single dataset (likely SMD as it is readily available) and implement a simple baseline model such as an LSTM-based autoencoder or basic reconstruction model. From this foundation, we will progressively build toward more sophisticated transformer-based architectures as time and understanding permit. Throughout the process, we will maintain proper experimental validation using train/validation/test splits and appropriate metrics (Precision, Recall, F1-score, AUC-ROC) while comparing results against baseline methods.
+
+This project plan remains flexible and open to refinement based on preliminary results and feedback from professor. We prioritize understanding the theoretical foundations and implementing a rigorous but manageable experimental pipeline over attempting to replicate overly complex state-of-the-art systems.
 
 \printbibliography
+
 \end{document} 

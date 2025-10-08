@@ -1,6 +1,7 @@
 # Project specific
 *.csv
 tests/
+references/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
