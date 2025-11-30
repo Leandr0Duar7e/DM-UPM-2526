@@ -84,7 +84,7 @@ Relate results directly to OmniAnomaly and TranAD
 
 Stage 2 — Transformer-based Anomaly Detection
 
-Full report (Overleaf):
+Stage 2 report (Overleaf):
 https://www.overleaf.com/9614831219mnzbpmczhwtw#deeb77
 
 Stage 2 consists of the full implementation and evaluation of deep learning models for multivariate anomaly detection using the Server Machine Dataset (SMD).
@@ -164,6 +164,8 @@ Assignment 4 — Domain Interpretation & Structural Analysis
 
 Detailed examination of real-world time-series patterns in Finance and Hotel ADR, comparison with simulator output, and assessment of within/between-domain distances.
 
+Full report (Overleaf):
+https://www.overleaf.com/project/69246acefaf03c0b676f5d28
 ## Quick Setup
 
 ```bash
