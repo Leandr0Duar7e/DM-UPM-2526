@@ -70,14 +70,11 @@ Evaluate models using Precision, Recall, F1, ROC-AUC, PR-AUC
 Relate empirical results to OmniAnomaly and TranAD
 
 Stage 2 — Transformer-based Anomaly Detection
-
-Stage 2 report (Overleaf):
-https://www.overleaf.com/9614831219mnzbpmczhwtw#deeb77
-
 Stage 2 report PDF: DM_secondStage.pdf
 
-
 Stage 2 implements the modelling, training, and evaluation steps of the KDD process on machine-1-1 of the Server Machine Dataset (SMD). The analysis includes baseline models, transformer variants, thresholding strategies, error distribution studies, and feature-level diagnostics.
+
+Final Report overleaf: https://www.overleaf.com/1476931741jsskfyqfknrb#d8ef17
 
 Models Implemented
 
