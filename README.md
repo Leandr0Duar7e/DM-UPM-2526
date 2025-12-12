@@ -187,7 +187,5 @@ uv add <package-name>
 uv run python <script.py>
 
 
-xxx
-
 # Launch Jupyter Lab
 uv run jupyter lab
